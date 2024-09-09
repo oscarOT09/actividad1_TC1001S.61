@@ -23,7 +23,7 @@ def line(start, end):
 
 
 def square(start, end):
-    """Draw square from start to end."""
+    "Draw square from start to end."
     up()
     goto(start.x, start.y)
     down()
@@ -50,6 +50,19 @@ def triangle(start, end):
     """Draw triangle from start to end."""
     pass  # TODO
 
+def pentagon(start, end):
+    """Draw pentagon from start to end."""
+
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(5):
+        forward(end.x - start.x)
+        left(72)
+
+    end_fill()
 
 def tap(x, y):
     """Store starting point or draw shape."""
@@ -84,4 +97,5 @@ onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
+onkey(lambda: store('shape', pentagon), 'p')
 done()
