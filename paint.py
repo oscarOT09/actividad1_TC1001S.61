@@ -1,7 +1,5 @@
 from turtle import *
-
 from freegames import vector
-
 
 def line(start, end):
     """Draw line from start to end."""
@@ -10,9 +8,8 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
-
 def square(start, end):
-    "Draw square from start to end."
+    """Draw square from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -24,11 +21,16 @@ def square(start, end):
 
     end_fill()
 
-
 def circle(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
-
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    radius = (end.x - start.x) / 2
+    turtle_circle = abs(radius) 
+    circle(turtle_circle)
+    end_fill()
 
 def rectangle(start, end):
     up()
@@ -43,7 +45,6 @@ def rectangle(start, end):
         left(90)
 
     end_fill()
-
 
 def triangle(start, end):
     up()
@@ -61,7 +62,6 @@ def triangle(start, end):
 
 def pentagon(start, end):
     """Draw pentagon from start to end."""
-
     up()
     goto(start.x, start.y)
     down()
@@ -85,11 +85,9 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
-
 def store(key, value):
     """Store value in state at key."""
     state[key] = value
-
 
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
@@ -101,6 +99,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('yellow'), 'Y') 
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
