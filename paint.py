@@ -3,7 +3,6 @@ from freegames import vector
 
 # Función para dibujar una línea
 def line(start, end):
-    """Draw line from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -11,7 +10,6 @@ def line(start, end):
 
 # Función para dibujar un cuadrado
 def square(start, end):
-    """Draw square from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -25,7 +23,6 @@ def square(start, end):
 
 # Función para dibujar un círculo
 def circle_shape(start, end):
-    """Draw circle from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -37,7 +34,6 @@ def circle_shape(start, end):
 
 # Función para dibujar un rectángulo
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -53,7 +49,6 @@ def rectangle(start, end):
 
 # Función para dibujar un triángulo
 def triangle(start, end):
-    """Draw triangle from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -70,7 +65,6 @@ def triangle(start, end):
 
 # Función para dibujar un pentágono
 def pentagon(start, end):
-    """Draw pentagon from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -84,7 +78,6 @@ def pentagon(start, end):
 
 # Función para manejar los clics de la pantalla
 def tap(x, y):
-    """Store starting point or draw shape."""
     start_point = state['start']
 
     if start_point is None:
@@ -97,7 +90,6 @@ def tap(x, y):
 
 # Función para almacenar el estado
 def store(key, value):
-    """Store value in state at key."""
     state[key] = value
 
 # Estado inicial del programa
